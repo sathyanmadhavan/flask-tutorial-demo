@@ -4,15 +4,12 @@ Habit: Develop -> test locally -> commit -> push to remote -> deploy to prod -> 
 
 """
 
-from flask import Flask
-
-app = Flask(__name__)
-
+from flask import flask, render_template
+app = flask(__name__)
 @app.route("/")
 def index_page():
     "The search page"
-    return "<html><h1>Under construction</h1>Hello, I'm Sathyan.<html>"
-
+    return render_template('resume.html')
 #----START OF SCRIPT
 if __name__=='__main__':
     app.run(host='0.0.0.0',port=6464)
